@@ -38,7 +38,7 @@ public class MainController {
 
 	
 	@RequestMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("theId") int theId, Model theModel) {
+	public String showFormForUpdate(@RequestParam("customerId") int theId, Model theModel) {
 		Customer cus = cusSrvc.findById(theId);
 		theModel.addAttribute("Customer", cus);
 
@@ -68,7 +68,7 @@ public class MainController {
 		}
 	
 	@RequestMapping("/delete")
-	public String delete(@RequestParam("theId") int theId) {
+	public String delete(@RequestParam("customerId") int theId) {
 		cusSrvc.delete(theId);
 
 		return "redirect:/customer/list";
